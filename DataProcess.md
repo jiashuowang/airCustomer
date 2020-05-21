@@ -2,62 +2,44 @@
 需要使用到的重要数据信息：(所有数据详见air_data.csv)
 
 **客户基本信息** 
+特征名称 | 特征说明
+- | -
+MEMBER_NO | 会员卡号
+FFP_DATE | 入会时间
+FIRST_FLIGHT_DATE | 第一次飞行日期
+GENDER | 性别
+FFP_TIER | 会员卡级别
+WORK_CITY | 工作地城市
+WORK_PROVINCE | 工作地所在省份
+WORK_COUNTRY | 工作地所在国家
+AGE | 年龄
 
-特征名称		特征说明
 
-MEMBER_NO		会员卡号
-
-FFP_DATE		入会时间
-
-FIRST_FLIGHT_DATE	第一次飞行日期
-
-GENDER			性别
-
-FFP_TIER		会员卡级别
-
-WORK_CITY		工作地城市
-
-WORK_PROVINCE		工作地所在省份
-
-WORK_COUNTRY		工作地所在国家
-
-AGE			年龄
 
 **飞行基本信息**
-
-FLIGHT_COUNT		观测窗口内的飞行次数
-
-LOAD_TIME		观测窗口的结束时间
-
-LAST_TO_END		最后一次乘机时间至观测窗口结束时长
-
-AVG_DISCOUNT		平均折扣率
-
-SUM_YR			观测窗口的票价收入
-
-SEG_KM_SUM		观测窗口的总飞行公里数
-
-LAST_FLIGHT_DATE	末次飞行日期
-
-AVG_INTERVAL		平均乘机时间间隔
-
-MAX_INTERVAL		最大乘机间隔
+特征名称 | 特征说明
+- | -
+FLIGHT_COUNT | 观测窗口内的飞行次数
+LOAD_TIME | 观测窗口的结束时间
+LAST_TO_END	|最后一次乘机时间至观测窗口结束时长
+AVG_DISCOUNT | 平均折扣率
+SUM_YR | 观测窗口的票价收入
+SEG_KM_SUM | 观测窗口的总飞行公里数
+LAST_FLIGHT_DATE | 末次飞行日期
+AVG_INTERVAL | 平均乘机时间间隔
+MAX_INTERVAL | 最大乘机间隔
 
 **积分基本信息**
 
-EXCHANGE_COUNT		积分兑换次数
-
-EP_SUM			总精英积分
-
-PROMOPTIVE_SUM		促销积分
-
-PARTNER_SUM		合作伙伴积分
-
-POINTS_SUM		总累计积分
-
-POINT_NOTFLIGHT		非乘机的积分变动次数
-
-BP_SUM			总基本积分
+特征名称 | 特征说明
+- | -
+EXCHANGE_COUNT	|	积分兑换次数
+EP_SUM		|	总精英积分
+PROMOPTIVE_SUM	|	促销积分
+PARTNER_SUM	|	合作伙伴积分
+POINTS_SUM	|	总累计积分
+POINT_NOTFLIGHT	|	非乘机的积分变动次数
+BP_SUM		|	总基本积分
 
 ## 选择的分类模型：
 一般商业模式识别客户价值的模型：RFM模型。
@@ -77,17 +59,13 @@ M（Monetary）指顾客在某段时间内所消费的金额。消费金额越�
 
 将客户关系长度L，消费时间间隔R，消费频率F，飞行里程M和折扣系数的平均值C作为航空公司识别客户价值的关键特征，记为LRFMC模型。
 
-模型 航空公司LRFMC模型
-
-L	会员入会时间距观测窗口结束的月数
-
-R	客户最近一次乘坐公司飞机距观测窗口结束的月数
-
-F	客户在观测窗口内乘坐公司飞机的次数
-
-Ms	客户在观测窗口内累计的飞行里程
-
-C	客户在观测窗口内乘坐舱位所对应的折扣系数的平均值
+模型 | 航空公司LRFMC模型
+- | -
+L | 会员入会时间距观测窗口结束的月数
+R |	客户最近一次乘坐公司飞机距观测窗口结束的月数
+F |	客户在观测窗口内乘坐公司飞机的次数
+Ms | 客户在观测窗口内累计的飞行里程
+C |	客户在观测窗口内乘坐舱位所对应的折扣系数的平均值
 
 数据处理流程：
 1.	数据探查----------找出每个数据项最大值和最小值、空值等情况
